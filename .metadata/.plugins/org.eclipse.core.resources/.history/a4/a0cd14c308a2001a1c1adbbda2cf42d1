@@ -1,0 +1,34 @@
+/*
+ * main.c
+ *
+ *  Created on: May 15, 2020
+ *      Author: MGIsmail
+ */
+
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
+#include "DIO_Interface.h"
+
+//#include <util/delay.h>
+
+int main (void)
+{
+
+
+	DIO_VidSetPortDirection(PORTA, OUTPUT);
+	DIO_VidSetPinDirection(PORTD, PIN0, INPUT);
+
+	while (1)
+	{
+		DIO_VidSetPinValue(PORTD,PIN0, OUT_HIGH)
+		if (DIO_u8GetPinValue(PORTD,PIN0)==1)
+		{
+			DIO_VidSetPinValue(PORTA, PIN0, OUT_HIGH);
+		}
+		else
+		{
+			DIO_VidSetPinValue(PORTA, PIN0, OUT_LOW);
+		}
+	}
+return 0;
+}

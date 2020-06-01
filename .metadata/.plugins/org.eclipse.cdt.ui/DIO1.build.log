@@ -1,0 +1,55 @@
+21:42:37 **** Build of configuration Debug for project DIO1 ****
+make all 
+Building file: ../DIO_Program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"DIO_Program.d" -MT"DIO_Program.o" -c -o "DIO_Program.o" "../DIO_Program.c"
+Finished building: ../DIO_Program.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:12:
+c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'main':
+../main.c:45: warning: implicit declaration of function 'DIO_7Seg'
+../main.c:50: warning: implicit declaration of function 'loading_7seg'
+Finished building: ../main.c
+ 
+Building file: ../seg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"seg.d" -MT"seg.o" -c -o "seg.o" "../seg.c"
+In file included from ../seg.c:9:
+c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../seg.c
+ 
+Building target: DIO1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,DIO1.map -mmcu=atmega32 -o "DIO1.elf"  ./DIO_Program.o ./main.o ./seg.o   
+Finished building target: DIO1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S DIO1.elf  >"DIO1.lss"
+Finished building: DIO1.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex DIO1.elf  "DIO1.hex"
+Finished building: DIO1.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 DIO1.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    7226 bytes (22.1% Full)
+(.text + .data + .bootloader)
+
+Data:         44 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+21:42:48 Build Finished (took 10s.348ms)
+

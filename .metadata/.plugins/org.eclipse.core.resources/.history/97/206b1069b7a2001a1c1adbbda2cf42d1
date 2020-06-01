@@ -1,0 +1,22 @@
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: MGIsmail
+ */
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
+#include "DIO_Interface.h"
+#include "LCD_Interface.h"
+
+
+void main (void)
+{
+	void LCD_VidInit(void);
+
+	void LCD_VidWriteCommand(u8 LOC_u8Command);
+
+	void LCD_VidWriteData(u8 LOC_u8Data);
+
+}
+

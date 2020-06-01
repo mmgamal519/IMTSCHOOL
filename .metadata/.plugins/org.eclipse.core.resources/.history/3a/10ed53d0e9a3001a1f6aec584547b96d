@@ -1,0 +1,17 @@
+/*
+ * LCD_Config.h
+ *
+ *  Created on: Jun 1, 2020
+ *      Author: MGIsmail
+ */
+
+#ifndef LCD_CONFIG_H_
+#define LCD_CONFIG_H_
+
+#define GLB_u8DataPort		PORTD
+#define GLB_u8CTRLPort 		PORTB
+#define GLB_u8RS 			PIN3
+#define GLB_u8RW 			PIN4
+#define GLB_u8Enb			PIN5
+
+#endif /* LCD_CONFIG_H_ */

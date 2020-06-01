@@ -1,0 +1,40 @@
+/*
+ * main.c
+ *
+ *  Created on: May 15, 2020
+ *      Author: MGIsmail
+ */
+
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
+#include "DIO_Interface.h"
+
+#include <util/delay.h>
+
+void main (void)
+{
+
+
+	for (int i=0; i<8; i++)
+	{
+		DIO_VidSetPinDirection(PORTA, i, OUTPUT);
+	}
+
+
+	while (1)
+	{
+		for (int i=0; i<8; i++)
+		{
+			DIO_VidSetPinValue	( PORTA, i, OUT_HIGH);
+			_delay_ms(100);
+			DIO_VidSetPinValue	( PORTA, i, OUT_LOW);
+			_delay_ms(100);
+			DIO_VidSetPortValue	( PORTA, 0xff);
+			_delay_ms(100);
+			DIO_VidSetPortValue	( PORTA, 0x00);
+			_delay_ms(100);
+
+		}
+	}
+
+}
