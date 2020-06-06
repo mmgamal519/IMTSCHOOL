@@ -1,0 +1,33 @@
+19:22:14 **** Build of configuration Debug for project LCD_16x2_8bitReady ****
+make all 
+Building target: LCD_16x2_8bitReady.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,LCD_16x2_8bitReady.map -mmcu=atmega32 -o "LCD_16x2_8bitReady.elf"  ./DIO_Program.o ./LCD_Program.o ./LED_Program.o ./SevSeg2x1_Program.o ./main.o   
+Finished building target: LCD_16x2_8bitReady.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S LCD_16x2_8bitReady.elf  >"LCD_16x2_8bitReady.lss"
+Finished building: LCD_16x2_8bitReady.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCD_16x2_8bitReady.elf  "LCD_16x2_8bitReady.hex"
+Finished building: LCD_16x2_8bitReady.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_16x2_8bitReady.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14752 bytes (45.0% Full)
+(.text + .data + .bootloader)
+
+Data:        278 bytes (13.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+19:22:24 Build Finished (took 9s.196ms)
+

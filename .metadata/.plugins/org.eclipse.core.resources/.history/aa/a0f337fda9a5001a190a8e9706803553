@@ -1,0 +1,72 @@
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: MGIsmail
+ */
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
+#include "DIO_Interface.h"
+#include <util/delay.h>
+
+#include "SevSeg2x1_Interface.h"
+
+/*
+ * main.c
+ *
+ *  Created on: May 15, 2020
+ *      Author: MGIsmail
+ */
+
+
+
+void loading_7seg (int cycle);
+void DIO_7Seg (int intial, int upto, int refresh);
+
+
+
+int main (void)
+{
+	while (1)
+	{
+		DDRD=0x01;
+		PORTD=0x01;
+		if ((PIND & 0x01) ==1)
+		{
+			loading_7seg(2);
+		}
+		else if ((PIND & 0x01)==0)
+		{
+			DIO_7Seg (2,8,10);
+		}
+
+
+	}
+}
+
+
+void DIO_7Seg (int intial, int upto, int refresh)
+{
+	DDRC=0xFF;
+	DDRB=0b00000011;
+	PORTB=0x00;
+	int i = 0;
+	int j = 0;
+	for (int count=intial; count<(upto+1); count++)
+	{
+		i = count /10;
+		j = count % 10;
+
+		for (int z=0; z<refresh; z++)
+		{
+			SET_bit(PORTB, 0);
+			PORTC=_7Seg_array[j];
+			_delay_ms(10);
+			CLR_bit(PORTB, 0);
+			SET_bit(PORTB, 1);
+			PORTC=_7Seg_array[i];
+			_delay_ms(10);
+			CLR_bit(PORTB, 1);
+		}
+	}
+}

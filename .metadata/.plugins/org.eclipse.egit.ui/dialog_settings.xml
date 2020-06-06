@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="GitCommitMessageComponent">
+		<list key="C:\Users\mgismail\Desktop\personal development\Embbedded system\IMT ES Diploma\IMT_Workspace\.git">
+			<item value="false"/>
+			<item value="MGIsmail &lt;MGIsmail@EB-5CG63454S2.mobcorp.intrt.com&gt;"/>
+			<item value="MCAL_HAL clean ver&#x0D;&#x0A;DIO&#x0D;&#x0A;LED&#x0D;&#x0A;7Seg2x1"/>
+			<item value="MGIsmail &lt;MGIsmail@EB-5CG63454S2.mobcorp.intrt.com&gt;"/>
+			<item value="b933b5964c12f1859cee063ca6683ff13e80fc0e"/>
+		</list>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item value="200,200" key="STAGING_SASH_FORM_WEIGHT"/>
+		<item value="false" key="sortItemState"/>
+		<item value="200,200" key="HORIZONTAL_SASH_FORM_WEIGHT"/>
+	</section>
+</section>

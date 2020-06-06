@@ -1,0 +1,44 @@
+#ifndef _7SEG2X1_INTERFACE_H_ //Header guard if not defined
+#define _7SEG2X1_INTERFACE_H_
+#define On 1
+#define Off 0
+
+
+
+
+
+
+
+void 7Seg2x1_VidInit(void);
+
+void 7Seg2x1_VidDisplayOn (void);
+void 7Seg2x1_VidDisplayOff(void);
+void 7Seg2x1_VidClrDisplay(void);
+
+void 7Seg2x1_VidCursorOnOff(u8 LOC_u8State);
+
+void 7Seg2x1_VidCursorBlinking(u8 LOC_u8State);
+
+
+void 7Seg2x1_VidWriteCommand(u8 LOC_u8Command);
+
+void 7Seg2x1_VidWriteData(u8 LOC_u8Data);
+
+void 7Seg2x1_VidWriteString(u8 LOC_u8String[16]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endif

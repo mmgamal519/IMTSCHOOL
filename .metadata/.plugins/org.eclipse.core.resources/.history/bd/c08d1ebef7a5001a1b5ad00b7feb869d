@@ -1,0 +1,16 @@
+#ifndef _LCD_REGISTER_H_
+#define _LCD_REGISTER_H_
+
+
+#define DisplayOn			 0b00001100 		//command data for 8-bit to Turn Display on
+#define DisplayOff			 0b00001000 		//command data for 8-bit to Turn Display off
+#define CLRDisplay			 0b00000001		//command data for 8-bit to CLR Display
+
+
+
+
+
+
+
+
+#endif

@@ -1,0 +1,110 @@
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: MGIsmail
+ */
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
+#include "DIO_Interface.h"
+#include "LCD_Interface.h"
+#include <util/delay.h>
+#include "LCD_Register.h"
+
+
+int main (void)
+{
+	LCD_VidInit();
+
+	u8 SW1;
+		u8 SW2;
+		SevSeg2x1_VidInit();
+		DIO_VidSetPinDirection(PORTB, PIN6, INPUT); 			// SW1 as Input
+		DIO_VidSetPinValue(PORTB, PIN6, OUT_HIGH);					// SW1 enable pull up resistor
+		DIO_VidSetPinDirection(PORTB, PIN7, INPUT);			// SW2 as Input
+		DIO_VidSetPinValue(PORTB, PIN7, OUT_HIGH);					// SW2 enable pull up resistor
+		DIO_VidSetPortDirection(PORTA, 0xff);														// LED Port direction as output
+		while (1)
+		{
+			SW1 = DIO_u8GetPinValue(PORTB, PIN6);
+			SW2 = DIO_u8GetPinValue(PORTB, PIN7);
+			if ((SW1==0) and (SW2==0))
+			{
+				SevSeg2x1_VidCountUp(0,99)
+			}
+			else if  ((SW1==1) and (SW2==0))
+			{
+				SevSeg2x1_VidCountDown(99,0);
+			}
+			else if  ((SW1==0) and (SW2==1))
+			{
+				SevSeg2x1_VidLoading();
+			}
+			else if  ((SW1==0) and (SW2==0))
+			{
+				LED_VidButterfly(10,100);
+			}
+	/*LCD_VidWriteData('A');
+	LCD_VidWriteData('N');
+	LCD_VidWriteData('A');
+	LCD_VidWriteData('S');
+	LCD_VidWriteData(' ');
+	LCD_VidWriteData(' ');
+	LCD_VidWriteData('M');
+	LCD_VidWriteData('O');
+	LCD_VidWriteData('S');
+	LCD_VidWriteData('T');
+	LCD_VidWriteData('A');
+	LCD_VidWriteData('F');
+	LCD_VidWriteData('A');
+	LCD_VidWriteData(' ');*/
+
+
+
+	/*
+
+	LCD_VidWriteCommand(CursorOn);
+	LCD_VidWriteCommand(CursorBlink);
+	_delay_ms(5000);
+	LCD_VidWriteCommand(DisplayOff);
+	_delay_ms(2000);
+	LCD_VidWriteCommand(DisplayOn);
+	_delay_ms(2000);
+	LCD_VidWriteCommand(CLRDisplay);
+	_delay_ms(2000);
+	LCD_VidWriteString("Mostafa Ismail");
+	LCD_VidWriteCommand(CursorOn);
+	LCD_VidWriteCommand(CursorNoBlink);
+	_delay_ms(5000);
+	LCD_VidWriteCommand(CursorOff);
+
+	/*
+	LCD_VidCursorOnOff(On);
+	LCD_VidCursorBlinking(On);
+	_delay_ms(5000);
+
+	LCD_VidDisplayOff();
+	_delay_ms(2000);
+	LCD_VidDisplayOn();
+	_delay_ms(2000);
+	LCD_VidClrDisplay();
+	_delay_ms(2000);
+	LCD_VidWriteString("Mostafa Ismail");
+	LCD_VidCursorOnOff(On);
+	LCD_VidCursorBlinking(Off);
+	_delay_ms(5000);
+	LCD_VidCursorOnOff(Off);
+	 */
+	while(1)
+	{
+		LCD_VidWriteString(" * Anas Mostafa * ");
+		for (u8 i=0; i<16; i++)
+		{
+			LCD_VidWriteCommand(DisplayShiftR);
+			_delay_ms(500);
+		}
+		LCD_VidWriteCommand(ReturnHome);
+	}
+	return 0;
+}
+

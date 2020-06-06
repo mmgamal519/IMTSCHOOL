@@ -1,0 +1,33 @@
+#ifndef _7SEG2X1_INTERFACE_H_ //Header guard if not defined
+#define _7SEG2X1_INTERFACE_H_
+#define On 1
+#define Off 0
+
+
+
+
+
+
+void SevSeg2x1_VidDisplayDigitRight(u8 LOC_u8Digit);
+void SevSeg2x1_VidDisplayDigitLeft(u8 LOC_u8Digit);
+
+void SevSeg2x1_VidCountUp(u8 LOC_u8Start, u8 LOC_u8End);
+
+void SevSeg2x1_VidCountDown(u8 LOC_u8Start, u8 LOC_u8End);
+
+void SevSeg2x1_VidLoading(u8 LOC_u8Speed);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endif

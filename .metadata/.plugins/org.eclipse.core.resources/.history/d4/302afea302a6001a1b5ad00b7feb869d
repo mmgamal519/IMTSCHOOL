@@ -1,0 +1,62 @@
+#include "STD_TYPES.h"
+#include "BIT_Math.h"
+#include "avr/delay.h"
+
+#include "SevSeg2x1_Config.h"
+#include "DIO_Interface.h"
+#include "SevSeg2x1_Register.h"
+
+
+void _SevSeg2x1_VidDisplayDigitRight(u8 LOC_u8Digit)
+{
+
+
+
+}
+void _SevSeg2x1_VidDisplayDigitLeft(u8 LOC_u8Digit)
+{
+
+}
+
+void SevSeg2x1_VidCountUp(u8 LOC_u8Start, u8 LOC_u8End)
+{
+	u8 _7Seg_array[10]={Zero, One, Two, Three, Four, Five, Six, Seven, Eight, Nine};
+
+}
+
+void SevSeg2x1_VidCountDown(u8 LOC_u8Start, u8 LOC_u8End)
+{
+	u8 _7Seg_array[10]={Zero, One, Two, Three, Four, Five, Six, Seven, Eight, Nine};
+
+}
+
+void SevSeg2x1_VidLoading(u16 LOC_u8Speed)
+{
+
+
+	DIO_VidSetPortDirection(SevSEG2X1_DataPort, 0xFF);	//enable Data port for Seven Segment to be output
+	DIO_VidSetPinDirection(SevSEG2X1_CTRLPort, SevSEG2X1_L7SEG2X1, OUTPUT); //enable CTRL PIN for Left Seven Segment to be output
+	DIO_VidSetPinDirection(SevSEG2X1_CTRLPort, SevSEG2X1_R7SEG2X1, OUTPUT); //enable CTRL PIN for Right Seven Segment to be output
+
+	DIO_VidSetPinValue(SevSEG2X1_CTRLPort, SevSEG2X1_R7SEG2X1, Enable); //enable Right Seven Segment
+	DIO_VidSetPortValue(SevSEG2X1_DataPort, SevSeg_loadA);
+	_delay_ms(LOC_u8Speed);
+	DIO_VidSetPortValue(SevSEG2X1_DataPort, SevSeg_loadB);
+	_delay_ms(LOC_u8Speed);
+	DIO_VidSetPortValue(SevSEG2X1_DataPort, SevSeg_loadC);
+	_delay_ms(LOC_u8Speed);
+	DIO_VidSetPortValue(SevSEG2X1_DataPort, SevSeg_loadD);
+	_delay_ms(LOC_u8Speed);
+	DIO_VidSetPinValue(SevSEG2X1_CTRLPort, SevSEG2X1_R7SEG2X1, Disable); //Disable Right Seven Segment
+
+	DIO_VidSetPinValue(SevSEG2X1_CTRLPort, SevSEG2X1_L7SEG2X1, Enable); //enable Right Seven Segment
+	DIO_VidSetPortValue(SevSEG2X1_DataPort, SevSeg_loadD);
+	_delay_ms(LOC_u8Speed);
+	DIO_VidSetPortValue(SevSEG2X1_DataPort, SevSeg_loadE);
+	_delay_ms(LOC_u8Speed);
+	DIO_VidSetPortValue(SevSEG2X1_DataPort, SevSeg_loadF);
+	_delay_ms(LOC_u8Speed);
+	DIO_VidSetPortValue(SevSEG2X1_DataPort, SevSeg_loadA);
+	_delay_ms(LOC_u8Speed);
+	DIO_VidSetPinValue(SevSEG2X1_CTRLPort, SevSEG2X1_L7SEG2X1, Disable); //Disable Right Seven Segment
+}

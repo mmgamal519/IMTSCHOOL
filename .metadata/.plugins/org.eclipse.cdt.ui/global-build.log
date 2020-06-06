@@ -1,15 +1,15 @@
-11:32:47 **** Incremental Build of configuration Debug for project LCD_16x2 ****
+02:20:41 **** Incremental Build of configuration Debug for project LCD_16x2_8bit_test ****
 make all 
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 LCD_16x2.elf
+avr-size --format=avr --mcu=atmega32 LCD_16x2_8bit_test.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    9930 bytes (30.3% Full)
+Program:   15650 bytes (47.8% Full)
 (.text + .data + .bootloader)
 
-Data:         36 bytes (1.8% Full)
+Data:        264 bytes (12.9% Full)
 (.data + .bss + .noinit)
 
 

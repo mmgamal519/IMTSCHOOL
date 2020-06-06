@@ -1,0 +1,10 @@
+19:43:56 **** Incremental Build of configuration Debug for project LCD_16x2_4bit test ****
+make all 
+Building target: LCD_16x2_4bit test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,LCD_16x2_4bit test.map -mmcu=atmega32 -o "LCD_16x2_4bit test.elf"  ./DIO_Program.o ./LCD_Program.o ./LED_Program.o ./SevSeg2x1_Program.o ./main.o   
+avr-gcc.exe: test.map: No such file or directory
+make: *** [LCD_16x2_4bit test.elf] Error 1
+
+19:44:05 Build Finished (took 8s.631ms)
+
