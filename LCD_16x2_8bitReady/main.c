@@ -66,7 +66,7 @@ int main (void)
 
 	while(1)
 	{
-	LCD_VidWriteString("Anas Mostafa");
+	LCD_VidWriteString(" Mostafa");
 		for (u8 i=0; i<16; i++)
 		{
 			LCD_VidWriteCommand(DisplayShiftR);
