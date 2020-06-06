@@ -71,14 +71,6 @@ void LCD_VidWriteNumber(u32 LOC_u32Number)
 
 	while (LOC_u32Number>0)
 	{
-		if (LOC_u32Number % 10 == 0)
-		{
-
-		}
-		else
-		{
-
-		}
 		reversed = reversed * 10 + LOC_u32Number % 10;
 		LOC_u32Number = LOC_u32Number / 10;
 	}
