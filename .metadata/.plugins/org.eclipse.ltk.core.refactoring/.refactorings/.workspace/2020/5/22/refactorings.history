@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;DIO1/DIO_7SegVOP.c&apos;" deleteContents="false" description="Delete resource &apos;DIO1/DIO_7SegVOP.c&apos;" element1="/DIO1/DIO_7SegVOP.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1590858262508"/>&#x0A;<refactoring comment="Delete 3 resources" deleteContents="false" description="Delete 3 resources" element1="/LCD_16x2/DIO_Interface.h" element2="/LCD_16x2/DIO_Program.c" element3="/LCD_16x2/DIO_Register.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1590872455857"/>
-</session>
