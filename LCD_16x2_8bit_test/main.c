@@ -67,23 +67,41 @@ int main (void)
 	_delay_ms(5000);
 	 */
 	//LCD_VidArabic();
-//LCD_VidSetPosition(1, 4);
-
-	LCD_VidWriteNumber(0);
-	_delay_ms(2000);
-	LCD_VidWriteCommand(CLRDisplay);
-
-	LCD_VidWriteNumber(6439);
-	_delay_ms(2000);
-	LCD_VidWriteCommand(CLRDisplay);
-	LCD_VidWriteNumber(120);
-	_delay_ms(2000);
-	LCD_VidWriteCommand(CLRDisplay);
-	_delay_ms(2000);
-	LCD_VidWriteNumber(1500);
+	//LCD_VidSetPosition(1, 4);
 
 	while(1)
 	{
+		for (u32 i=10; i<20;i++)
+			{
+			u8 j=5;
+			//	for (u32 j=1; j<20;j++)
+				{
+					LCD_VidWriteCommand(CLRDisplay);
+					LCD_VidWriteEquation (i,'+',j);
+					_delay_ms(2000);
+					LCD_VidWriteCommand(CLRDisplay);
+					LCD_VidWriteEquation (i,'-',j);
+					_delay_ms(2000);
+					LCD_VidWriteCommand(CLRDisplay);
+					LCD_VidWriteEquation (i,'x',j);
+					_delay_ms(2000);
+					LCD_VidWriteCommand(CLRDisplay);
+					LCD_VidWriteEquation (i,'/',j);
+					_delay_ms(2000);
+					LCD_VidWriteCommand(CLRDisplay);
+					LCD_VidWriteEquation (i,'%',j);
+					_delay_ms(2000);
+				}
+			}
+		/*
+		for (u32 i=5674788; i<23456789; i++)
+		{
+			LCD_VidWriteCommand(CLRDisplay);
+			LCD_VidWriteNumber(i);
+			_delay_ms(200);
+
+
+		}
 		/*	LCD_VidWriteString("Mostafa123");
 		for (u8 i=0; i<16; i++)
 		{
