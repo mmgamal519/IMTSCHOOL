@@ -9,6 +9,7 @@
 #define _LCD_CONFIG_H_
 
 #define LCD_DataPort			PORT_D		//as port number 0-3 PortA-D of Data port
+
 #define LCD_CTRLPort 		PORT_B		//as  port number 0-3 PortA-D of CTRL port
 #define LCD_RS_PIN 			PIN3
 #define LCD_RW_PIN 			PIN4

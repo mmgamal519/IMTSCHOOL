@@ -26,20 +26,7 @@ int main (void)
 	LCD_VidInit();
 
 
-	/*LCD_VidWriteData('A');
-	LCD_VidWriteData('N');
-	LCD_VidWriteData('A');
-	LCD_VidWriteData('S');
-	LCD_VidWriteData(' ');
-	LCD_VidWriteData(' ');
-	LCD_VidWriteData('M');
-	LCD_VidWriteData('O');
-	LCD_VidWriteData('S');
-	LCD_VidWriteData('T');
-	LCD_VidWriteData('A');
-	LCD_VidWriteData('F');
-	LCD_VidWriteData('A');
-	LCD_VidWriteData(' ');*/
+
 	/*
 
 	LCD_VidWriteCommand(CursorOn);
@@ -61,18 +48,31 @@ int main (void)
 	LCD_VidCursorOnOff(On);
 	LCD_VidCursorBlinking(On);
 	_delay_ms(5000);
-*/
+	 */
 
 
 	while(1)
 	{
-	LCD_VidWriteString("Mostafa");
-		for (u8 i=0; i<16; i++)
-		{
-		//	LCD_VidWriteCommand(DisplayShiftR);
-			_delay_ms(500);
-		}
-		LCD_VidWriteCommand(ReturnHome);
+		LCD_VidWriteCommand(CLRDisplay);
+		LCD_VidWriteData('A');
+		LCD_VidWriteData('N');
+		LCD_VidWriteData('A');
+		LCD_VidWriteData('S');
+		LCD_VidWriteData(' ');
+		LCD_VidWriteData(' ');
+		LCD_VidWriteData('M');
+		LCD_VidWriteData('O');
+		LCD_VidWriteData('S');
+		LCD_VidWriteData('T');
+		LCD_VidWriteData('A');
+		LCD_VidWriteData('F');
+		LCD_VidWriteData('A');
+		LCD_VidWriteData(' ');
+		_delay_ms(5000);
+		LCD_VidWriteCommand(CLRDisplay);
+		LCD_VidWriteString("Mostafa");
+		_delay_ms(2000);
+		//		LCD_VidWriteCommand(ReturnHome);
 
 	}
 	return 0;

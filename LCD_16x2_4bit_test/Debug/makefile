@@ -30,47 +30,47 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 LSS += \
-LCD_16x2.lss \
+LCD_16x2_4bit_test.lss \
 
 FLASH_IMAGE += \
-LCD_16x2.hex \
+LCD_16x2_4bit_test.hex \
 
 SIZEDUMMY += \
 sizedummy \
 
 
 # All Target
-all: LCD_16x2.elf secondary-outputs
+all: LCD_16x2_4bit_test.elf secondary-outputs
 
 # Tool invocations
-LCD_16x2.elf: $(OBJS) $(USER_OBJS)
+LCD_16x2_4bit_test.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR C Linker'
-	avr-gcc -Wl,-Map,LCD_16x2.map -mmcu=atmega32 -o "LCD_16x2.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	avr-gcc -Wl,-Map,LCD_16x2_4bit_test.map -mmcu=atmega32 -o "LCD_16x2_4bit_test.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-LCD_16x2.lss: LCD_16x2.elf
+LCD_16x2_4bit_test.lss: LCD_16x2_4bit_test.elf
 	@echo 'Invoking: AVR Create Extended Listing'
-	-avr-objdump -h -S LCD_16x2.elf  >"LCD_16x2.lss"
+	-avr-objdump -h -S LCD_16x2_4bit_test.elf  >"LCD_16x2_4bit_test.lss"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-LCD_16x2.hex: LCD_16x2.elf
+LCD_16x2_4bit_test.hex: LCD_16x2_4bit_test.elf
 	@echo 'Create Flash image (ihex format)'
-	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCD_16x2.elf  "LCD_16x2.hex"
+	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCD_16x2_4bit_test.elf  "LCD_16x2_4bit_test.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-sizedummy: LCD_16x2.elf
+sizedummy: LCD_16x2_4bit_test.elf
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega32 LCD_16x2.elf
+	-avr-size --format=avr --mcu=atmega32 LCD_16x2_4bit_test.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) LCD_16x2.elf
+	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) LCD_16x2_4bit_test.elf
 	-@echo ' '
 
 secondary-outputs: $(LSS) $(FLASH_IMAGE) $(SIZEDUMMY)

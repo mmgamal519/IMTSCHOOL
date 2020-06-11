@@ -1,6 +1,11 @@
 #ifndef _LCD_REGISTER_H_
 #define _LCD_REGISTER_H_
 
+// As is to show port as number from 0 to 3
+#define PORT_A 		0
+#define PORT_B 		1
+#define PORT_C 		2
+#define PORT_D 		3
 
 #define DisplayOn				0b00001100 		//command data for 8-bit to Turn Display on
 #define DisplayOff			 	0b00001000 		//command data for 8-bit to Turn Display off
