@@ -29,19 +29,19 @@
 #define KeyB1 			1
 #define KeyB2			2
 #define KeyB3			3
-#define KeyB4			22
+#define KeyB4			10
 #define KeyB5			4
 #define KeyB6 			5
 #define KeyB7			6
-#define KeyB8			33
+#define KeyB8			11
 #define KeyB9			7
 #define KeyB10		8
 #define KeyB11		9
-#define KeyB12		44
-#define KeyB13		55
+#define KeyB12		12
+#define KeyB13		'#'
 #define KeyB14		0
-#define KeyB15		99
-#define KeyB16		66
+#define KeyB15		'*'
+#define KeyB16		13
 /*
   {
 		0x04,    0x08,    0x0C,    0x10 },

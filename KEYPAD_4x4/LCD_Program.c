@@ -62,13 +62,19 @@ void LCD_VidWriteString(u8* LOC_u8String)
 	}
 }
 
-void LCD_VidWriteNumber(u32 LOC_u32Number)
+void LCD_VidWriteNumber(s32 LOC_u32Number)
 {
 	u8 Reversed_Number[Large_number_length];
 
 	s8 Rev_Counter = 0;
 	u8 Counter=0;
 	u8 digit=0;
+	// for negative numbers
+	if (LOC_u32Number<0)
+	{
+		LCD_VidWriteData('-');
+		LOC_u32Number = -LOC_u32Number;
+	}
 	if (LOC_u32Number ==0)
 	{
 		LCD_VidWriteData(48);
@@ -87,6 +93,7 @@ void LCD_VidWriteNumber(u32 LOC_u32Number)
 	}
 	_delay_ms(10);
 }
+
 void LCD_VidWriteEquation(u32 LOC_u32Number1, u32 LOC_u8Op, u32 LOC_u32Number2)
 {
 	LCD_VidWriteNumber(LOC_u32Number1);

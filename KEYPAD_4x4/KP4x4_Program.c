@@ -67,7 +67,7 @@ u8 KPD_au8SwitchVal[4][4] =
 
 #define ROW_FIN    8
 
-#define NOT_PRESSED    0
+#define NOT_PRESSED    255
 /***************************************************************************************/
 
 
@@ -117,97 +117,174 @@ u8 KeyPad_4x4_u8ButtonPressed(void)
 	}
 }
 
-void KeyPad4x4_au8GetArray(void)
+void KeyPad4x4_VidFullcalculator(void)
 {
-	LCD_VidWriteData(CLRDisplay);
-	_delay_ms(100);
+	u8 keypressed=255;
+	u8 operator = 0;
+	s16 Num =0;
+	s16 Num1=0;
+
+	LCD_VidWriteCommand(CLRDisplay);
 	LCD_VidSetPosition(0,0);
-	LCD_VidWriteString("calculate");
-	//u8 Array[10];
-	volatile u8 Index = 0;
-	volatile u8 Button = 0xFF;
-	volatile u32 Num1 =0;
-	volatile u32 Num2 =0;
-	volatile u32 Result =0;
-	volatile u32 Temp = 0;
-	volatile u8 SignFlag = 0;
-	// go to position will write at LCD
+	LCD_VidWriteString("Calculator");
 	LCD_VidSetPosition(1,0);
-	LCD_VidWriteString("                            ");
-	LCD_VidSetPosition(1,0);
-	//LCD_VidWriteData(CursorOn);
-	//loop and get all pressed keys then save it in array with limited length till press enter (ex keyBB15)
-
-	while (Button  != KeyB13 )
+	while(keypressed != KeyB13)
 	{
-		Button = KeyPad_4x4_u8ButtonPressed();
-		if (Button !=0)
+		keypressed = KeyPad_4x4_u8ButtonPressed();
+		if (keypressed >=0 & keypressed <=9)
 		{
-			//Array[Index]= Button;
-
-
-
-
-			if (Button == KeyB4 )
+			Num = Num * 10 +keypressed;
+			LCD_VidWriteNumber(keypressed);
+		}
+		else if (keypressed >=10 & keypressed <=13)
+		{
+			operator = keypressed;
+			Num1 = Num;
+			Num = 0;
+			switch (operator)
 			{
-				LCD_VidWriteData('+');
-				Num1 = Temp;
-				Temp = 0;
-				SignFlag = 1;
-				Index = 0;
+			case 10: LCD_VidWriteData('+'); break;
+			case 11: LCD_VidWriteData('-'); break;
+			case 12: LCD_VidWriteData('x'); break;
+			case 13: LCD_VidWriteData('/'); break;
 			}
-			else if (Button == KeyB8 )
+		}
+		else if (keypressed =='#')
+		{
+			LCD_VidWriteData('=');
+			switch (operator)
 			{
+			case 10: LCD_VidWriteNumber(Num1 + Num); break;
+			case 11: Num = Num1 - Num;
+				//LCD_VidWriteString("(");
+				LCD_VidWriteNumber(Num);
+				//LCD_VidWriteString(")");
+				break;
+			case 12: LCD_VidWriteNumber(Num1 * Num); break;
+			case 13: LCD_VidWriteNumber(Num1 / Num);
+			if ((Num1 % Num)>0)
+				{LCD_VidWriteString(".");
+				u16 Div = (1000* (Num1 % Num) )/ Num;
+				LCD_VidWriteNumber(Div);
+				}
+			break;
+			}
+		}
+	}
+}
+
+s8 KeyPad4x4_s83ButtonCalc(void)
+{
+	// Initialize up, down and next buttons
+	u8 Up_Button = KeyB1;
+	u8 Down_Button = KeyB5;
+	u8 Next_Button = KeyB9;
+	s8 Num1=0;
+	u8 keypressed = NOT_PRESSED;
+	u8 Row_postion=1;
+	u8 Col_postion=0;
+
+	LCD_VidWriteCommand(CLRDisplay);
+	LCD_VidSetPosition(0,0);
+	LCD_VidWriteString("Enter number");
+	LCD_VidSetPosition(Row_postion,Col_postion);
+	LCD_VidWriteCommand(CursorBlink);
+	while (keypressed != Next_Button)
+	{
+		keypressed = KeyPad_4x4_u8ButtonPressed();
+		if (keypressed == Up_Button)
+		{
+			Num1++;
+		}
+		else 	if (keypressed == Down_Button)
+		{
+			Num1--;
+		}
+		if  ((keypressed == Up_Button) | (keypressed == Down_Button) )
+		{
+			LCD_VidSetPosition(Row_postion,Col_postion);
+			LCD_VidWriteString("                ");
+			LCD_VidSetPosition(Row_postion,Col_postion);
+			if (Num1 < 0)
+			{
+				//	LCD_VidWriteString("-ve not accepted");
 				LCD_VidWriteData('-');
-				Num1 = Temp;
-				Temp = 0;
-				SignFlag = 2;
-				Index = 0;
-			}
-			else if (Button == KeyB12 )
-			{
-				LCD_VidWriteData('x');
-				Num1 = Temp;
-				Temp = 0;
-				SignFlag = 3;
-				Index = 0;
-			}
-			else if (Button == KeyB16 )
-			{
-				LCD_VidWriteData('/');
-				Num1 = Temp;
-				Temp = 0;
-				SignFlag = 4;
-				Index = 0;
-			}
-			else if (Button == KeyB15 )
-			{
-				LCD_VidWriteData('=');
-				Num2 = Temp;
-				break;
-			}
-			else if (Button == KeyB13 )
-			{
-				LCD_VidWriteData('=');
-				Num2 = Temp;
-				break;
-			}
-			else if (Button >0 && Button <=9 )
-			{
-				LCD_VidWriteNumber(Button);
-				Temp = Temp*Index*10 + Button;
-							Index++;
+				LCD_VidWriteNumber(-Num1);
 
 			}
+			else if (Num1 >= 0)
+			{
+				LCD_VidWriteNumber(Num1);
+			}
+
 		}
 
 	}
-	switch (SignFlag)
+	return Num1;
+}
+
+
+u8 KeyPad4x4_s83ButtonOperator(void)
+{
+	// Initialize up, down and next buttons
+	u8 Up_Button = KeyB1;
+	u8 Down_Button = KeyB5;
+	u8 Next_Button = KeyB9;
+	u8 Operator=0;
+	u8 Num1=0;
+	u8 keypressed = NOT_PRESSED;
+	u8 Row_postion=1;
+	u8 Col_postion=0;
+
+	LCD_VidWriteCommand(CLRDisplay);
+	LCD_VidSetPosition(0,0);
+	LCD_VidWriteString("Select Operator");
+	LCD_VidSetPosition(Row_postion,Col_postion);
+	LCD_VidWriteCommand(CursorBlink);
+	while (keypressed != Next_Button)
+	{
+		keypressed = KeyPad_4x4_u8ButtonPressed();
+		if (keypressed == Up_Button)
+		{
+			Num1++;
+		}
+		else 	if (keypressed == Down_Button)
+		{
+			Num1--;
+		}
+		if  ((keypressed == Up_Button) | (keypressed == Down_Button) )
+		{
+			LCD_VidSetPosition(Row_postion,Col_postion);
+			LCD_VidWriteString("                ");
+			LCD_VidSetPosition(Row_postion,Col_postion);
+			switch (Num1)
 			{
-			case 1 : Result = Num1 + Num2; LCD_VidWriteNumber(Result); break;
-			case 2 : Result = Num1 - Num2; LCD_VidWriteNumber(Result); break;
-			case 3 : Result = Num1 * Num2; LCD_VidWriteNumber(Result); break;
-			case 4 : Result = Num1 / Num2; LCD_VidWriteNumber(Result); break;
+			case 0 : LCD_VidWriteData('+'); break;
+			case 1 : LCD_VidWriteData('-'); 	break;
+			case 2 : LCD_VidWriteData('x'); 	break;
+			case 3 : LCD_VidWriteData('/'); 	break;
+			case 4 : LCD_VidWriteData('%');	break;
 			}
+		}
+	}
+	return Num1;
+}
+void KeyPad4x4_Vid3ButtonCalcCall(void)
+{
+	s8 Num1 = KeyPad4x4_s83ButtonCalc();
+	u8 Operator = KeyPad4x4_s83ButtonOperator();
+	s8 Num2 = KeyPad4x4_s83ButtonCalc();
+	LCD_VidWriteCommand(CLRDisplay);
+	LCD_VidSetPosition(0,0);
+	LCD_VidWriteString("Result");
+	LCD_VidSetPosition(1,0);
+	switch (Operator)
+	{
+	case 0 : LCD_VidWriteNumber(Num1+Num2); break;
+	case 1 : LCD_VidWriteNumber(Num1-Num2); 	break;
+	case 2 : LCD_VidWriteNumber(Num1*Num2); 	break;
+	case 3 : LCD_VidWriteNumber(Num1/Num2); 	break;
+	case 4 : LCD_VidWriteNumber(Num1%Num2);	break;
+	}
 }
 

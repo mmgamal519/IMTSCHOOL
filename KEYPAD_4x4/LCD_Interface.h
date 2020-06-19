@@ -22,7 +22,7 @@ void LCD_VidWriteData(u8 LOC_u8Data);
 
 void LCD_VidWriteString(u8* LOC_u8String);
 
-void LCD_VidWriteNumber(u32 LOC_u32Number);
+void LCD_VidWriteNumber(s32 LOC_u32Number);
 void LCD_VidWriteEquation(u32 LOC_u32Number1, u32 LOC_u8Op, u32 LOC_u32Number2);
 
 void LCD_VidSetPosition(u8 LOC_u8Row, u8 LOC_u8Column);

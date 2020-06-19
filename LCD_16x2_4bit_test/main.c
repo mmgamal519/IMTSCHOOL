@@ -23,6 +23,7 @@
 
 int main (void)
 {
+	_delay_ms(1000);
 	LCD_VidInit();
 
 

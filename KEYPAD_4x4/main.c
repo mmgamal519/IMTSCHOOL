@@ -25,48 +25,18 @@
 void  main (void)
 {
 
-	//	volatile u8 Button1 = 0;
-	//	u8 Button2 = 0;
 
 	LCD_VidInit();
 	KeyPad_4x4_VidInit();
-LCD_VidArabic();
-_delay_ms(2000);
+
 	while(1)
 	{
-		LCD_VidWriteCommand(CLRDisplay);
-		LCD_VidDispCustomChar(customChar_HumanKilloneD,0,0,0);
-		_delay_ms(5000);
-		for(u8 Row=0; Row<2;Row++)
-		{
-			for (u8 Col=0; Col <8; Col++)
-			{
-				LCD_VidWriteCommand(CLRDisplay);
-								LCD_VidDispArabicCharRighttoLeft(Mostafa_Arabic,0,Row,Col);
-								_delay_ms(2000);
-			}
-		}
-
-
-		LCD_VidWriteCommand(CLRDisplay);
-				LCD_VidDispCustomChar(Running_graphics,0,0,0);
-				_delay_ms(5000);
-
-		/*
-		Button1 = KeyPad_4x4_u8ButtonPressed();
-		if (Button1 !=0)
-		{
-			LCD_VidSetPosition(1,0);
-			LCD_VidWriteString("   ");
-			LCD_VidSetPosition(1,0);
-			LCD_VidWriteNumber(Button1);
-
-
-		}
-		 */
-
-		KeyPad4x4_au8GetArray();
-		_delay_ms (10000);
+		//	KeyPad4x4_Vid3ButtonCalcCall();
+		KeyPad4x4_VidFullcalculator();
+		_delay_ms (3000);
+		//	KeyPad4x4_au8GetArray();
+		//_delay_ms (2000);
 	}
 
 }
+
