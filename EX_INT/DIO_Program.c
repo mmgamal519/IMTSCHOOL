@@ -102,3 +102,15 @@ u8 	 DIO_u8GetPortValue	( u8 LOC_u8Port)
 	}
 	return value;
 }
+u8 	 DIO_u8ReadPortValue		( u8 LOC_u8Port)
+{
+	u8 value;
+	switch (LOC_u8Port)
+	{
+	case 0: value = PORTA; break;
+	case 1: value = PORTB; break;
+	case 2: value = PORTC; break;
+	case 3: value = PORTD; break;
+	}
+	return value;
+}

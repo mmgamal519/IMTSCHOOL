@@ -20,11 +20,5 @@
 #define DDRD  		*((volatile u8*)0x31)
 #define PIND  		*((volatile u8*)0x30)
 
-#define OUTPUT 1
-#define INPUT  0
 
-#define PORT_A			0
-#define PORT_B			1
-#define PORT_C			2
-#define PORT_D			3
 #endif

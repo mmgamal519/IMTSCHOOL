@@ -18,6 +18,11 @@
 #define OUT_LOW 0
 
 
+#define PORT_A			0
+#define PORT_B			1
+#define PORT_C			2
+#define PORT_D			3
+
 
 //prototype of functions
 // avoid magic numbers in declaration
@@ -38,7 +43,7 @@ u8 	 DIO_u8GetPinValue		( u8 LOC_u8Port, u8 LOC_u8Pin);
 // Get Port  value from DIO_port and return u8
 u8 	 DIO_u8GetPortValue	( u8 LOC_u8Port);
 
-
+u8 	 DIO_u8ReadPortValue		( u8 LOC_u8Port);
 
 
 

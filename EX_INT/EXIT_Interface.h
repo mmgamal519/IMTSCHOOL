@@ -5,7 +5,7 @@
 #define Rising_Edge			1
 #define IOC						2		//interrupt on change
 #define Low_Level			3
-#define Sense_Mood		Falling_Edge
+#define Sense_Mood		Rising_Edge //Falling_Edge //Rising_Edge // IOC // Low_Level
 
 
 void EXTINT0_VidInit(void);
