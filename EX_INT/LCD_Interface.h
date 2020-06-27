@@ -21,7 +21,7 @@ void LCD_VidWriteCommand(u8 LOC_u8Command);
 
 void LCD_VidWriteData(u8 LOC_u8Data);
 
-void LCD_VidWriteString(u8* LOC_u8String);
+void LCD_VidWriteString(s8* LOC_u8String);
 
 void LCD_VidWriteNumber(s32 LOC_u32Number);
 void LCD_VidWriteEquation(u32 LOC_u32Number1, u32 LOC_u8Op, u32 LOC_u32Number2);

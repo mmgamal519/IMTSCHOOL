@@ -11,7 +11,17 @@
 #include "ADC_Interface.h"
 #include <util/delay.h>
 
-
+//Global Pointer to Function
+static void (*ADC_GPFunction)(u16) = NULL;
+//Set Global Pointer to Function
+void ADC_SetCallBack(void(*LocalPF)(u16)) // Parameter is a *ptr_function
+{
+	//check pointer validation
+	if (LocalPF != NULL)
+	{
+		ADC_GPFunction = LocalPF;
+	}
+}
 void ADC_VidInit(void)
 {
 	// select the voltage reference from ADC_Config.h
@@ -163,23 +173,23 @@ void ADC_VidInterrupt_Enable(void)
 {
 	SET_BIT(ADCSRA,ADCSRA_ADIE);
 }
+void ADC_VidStartConversionNonBlocking( u8 LOC_u8channel)
+{
+	//Clear ADMUX
+	ADMUX &=(0b11100000);
+	//Choose channel
+	ADMUX |=(LOC_u8channel & 0b00011111);
+	//Enable Interrupt
+	SET_BIT(ADCSRA,ADCSRA_ADIE);
+	//Start Conversion
+	SET_BIT(ADCSRA,ADCSRA_ADSC);
+}
 //===========================================================
 void __vector_16(void)	//ISR 16 for ADC //Interrupt Vectors in ATmega32 Datasheet Page. 42//
 {
-	u16 Value =( ADC_VidGetDigitalValue( ADC_Channel0 ) * 5000UL )/ 1024;	//UL after integer to represent the number as unsigned long
-	LCD_VidSetPosition(1,0);
-	LCD_VidWriteString("ADC = ");
-	LCD_VidWriteNumber(Value);
-	if(Value <1500)
+	//check pointer validation
+	if (ADC_GPFunction != NULL)
 	{
-		DIO_VidSetPinValue(PORT_C,PIN0,1);
+		ADC_GPFunction(ADC_u16);
 	}
-	else if(Value >1500 && Value <3000)
-	{
-		DIO_VidSetPinValue(PORT_C,PIN1,1);
-	}else if(Value >3000)
-	{
-		DIO_VidSetPinValue(PORT_C,PIN2,1);
-	}
-	_delay_ms(1000);
 }

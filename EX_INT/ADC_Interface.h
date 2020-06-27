@@ -71,5 +71,7 @@
 void ADC_VidInit(void);	//ADC initialization
 u16 ADC_VidGetDigitalValue(u8 LOC_u8channel);	// ADC return the digital value of conversion
 void ADC_VidInterrupt_Enable(void);
+void ADC_VidStartConversionNonBlocking( u8 LOC_u8channel);
+void ADC_SetCallBack(void(*LocalPF)(u16));
 
 #endif

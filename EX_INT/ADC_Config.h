@@ -7,12 +7,12 @@
 #define AVCC 		1		//AVCC with external capacitor at AREF pin	REFS1 REFS0 01
 #define Reserved 	2		//Reserved	REFS1 REFS0 10
 #define Internal 	3		//Internal 2.56V Voltage Reference with external capacitor at AREF pin		REFS1 REFS0 11
-#define Voltage_Reference_Selection AVCC
+#define Voltage_Reference_Selection 	Internal
 //-------------------------------------------------
 // The ADC Data Register – ADCL and ADCH
 #define ADC_10Bits				0									//ADLAR = 0 	for Right Adjust
 #define ADC_8Bits				1									//ADLAR = 1		for Left Adjust
-#define ADC_Data_Register_width		ADC_10Bits	// ADC_10Bits // ADC_8Bit //
+#define ADC_Data_Register_width		ADC_8Bits	 	// ADC_10Bits // ADC_8Bit //
 //-------------------------------------------------
 //ADC Prescaler Select Bits
 //Bits 2:0 – ADPS2:0: ADC Prescaler Select Bits	0b000 -> Division Factor 2 ~ 0b111 -> Division Factor 128
@@ -25,12 +25,12 @@
 #define Division_Factor_32	4
 #define Division_Factor_64	5
 #define Division_Factor_128	6
-#define ADC_Division_Factor		Division_Factor_64
+#define ADC_Division_Factor		Division_Factor_128
 //-------------------------------------------------
 //ADC Enable Mode
 #define ADC_Enable_OD		0		//ADC Enable On demand , must be called each time >> Single conversion
 #define ADC_Enable_ATT		1		//ADC Enable All The Time, Set in ADC Initialization function >>Free running
-#define ADC_Enable_Mode			ADC_Enable_OD
+#define ADC_Enable_Mode			ADC_Enable_ATT
 //-------------------------------------------------
 //ADC Auto Trigger Enable
 //When this bit is written to one, Auto Triggering of the ADC is enabled.
@@ -40,7 +40,7 @@
 //A conversion will be triggered by the rising edge of the selected Interrupt Flag.
 #define ADC_Auto_Trigger_Disable		0		//ADC Enable On demand , must be called each time >> Single conversion
 #define ADC_Auto_Trigger_Enable		1		//ADC Enable All The Time, Set in ADC Initialization function >>Free running
-#define ADC_Auto_Trigger					ADC_Auto_Trigger_Disable
+#define ADC_Auto_Trigger					ADC_Auto_Trigger_Enable
 //-------------------------------------------------
 // ADC Auto Trigger Source Selections	(Table 86)
 //ADTS2 ADTS1 ADTS0 Trigger Source
@@ -52,7 +52,7 @@
 #define Timer_Counter_Compare_Match_B 	5	//1 0 1
 #define Timer_Counter1_Overflow				6	//1 1 0
 #define Timer_Counter1_Capture_Event		7	//1 1 1
-#define ADC_Auto_Trigger_Source_Selections	External_Interrupt_Request_0
+#define ADC_Auto_Trigger_Source_Selections	Free_Running_mode
 //-------------------------------------------------
 //
 

@@ -12,6 +12,7 @@
 #include "DIO_Interface.h"
 #include "KP4x4_Config.h"
 #include "KP4x4_Interface.h"
+
 #include "SevSeg2x1_Config.h"
 #include "SevSeg2x1_Register.h"
 #include "SevSeg2x1_Interface.h"
@@ -19,6 +20,7 @@
 #include "LCD_Config.h"
 #include "LCD_Interface.h"
 #include "LCD_CustomChar.h"
+#include "KP4x4_LCD_CalcInterface.h"
 
 #include <util/delay.h>
 

@@ -34,7 +34,15 @@ void LCD_VidInit(void)
 	DIO_VidSetPinDirection(LCD_CTRLPort,  LCD_Enb_PIN, OUTPUT); //Enb    CTRL PINS direction output
 	DIO_VidSetPinValue(LCD_CTRLPort, LCD_RS_PIN, OUT_LOW);  //RS = 0   register selection
 	DIO_VidSetPinValue(LCD_CTRLPort, LCD_RW_PIN, OUT_LOW);  //RW = 0
-	LCD_VidWriteCommand(FunctionSet_4bit); 	//function set
+//1st 4 bits for function set
+	u8 LOC_u8Command4Bit = (FunctionSet_4bit & 0xf0) | (DIO_u8ReadPortValue(LCD_DataPort) & 0x0f) ;
+		DIO_VidSetPortValue(LCD_DataPort, LOC_u8Command4Bit);  // Write Command
+		DIO_VidSetPinValue(LCD_CTRLPort, LCD_Enb_PIN, OUT_HIGH);  //Enable = 1 high rise edge
+		_delay_ms(1);	// required by LCD Datasheet
+		DIO_VidSetPinValue(LCD_CTRLPort, LCD_Enb_PIN, OUT_LOW);  //Enable = 0  Falling edge
+		_delay_ms(1); // give the LCD time to wite / display
+//2nd and 3rd 4 bits
+		LCD_VidWriteCommand(FunctionSet_4bit); 	//function set
 	_delay_ms(1); // wait for LCD to Function set
 	LCD_VidWriteCommand(DisplayOn);	//Display On
 	_delay_ms(1); // wait for LCD to Display On
@@ -110,7 +118,7 @@ void LCD_VidWriteData(u8 LOC_u8Data)
 #error "Wrong LCD Initialization Mode"
 #endif 	//LCD Initialization Mode
 }
-void LCD_VidWriteString(u8* LOC_u8String)
+void LCD_VidWriteString(s8* LOC_u8String)
 {
 	//LCD Initialization Mode
 #if LCD_Intialization_Mode ==	LCD_8bits

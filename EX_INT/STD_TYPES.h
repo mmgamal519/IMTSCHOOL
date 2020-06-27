@@ -30,4 +30,4 @@ typedef f64 *pf64;
 typedef f96 *pf96;
 
 //----------------
-
+#define NULL (void *)0
