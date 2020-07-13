@@ -31,3 +31,4 @@ typedef f96 *pf96;
 
 //----------------
 #define NULL (void *)0
+//#define NULL_APF (void *[])0

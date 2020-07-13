@@ -1,8 +1,8 @@
-#include "STD_TYPES.h"
-#include "BIT_MATH.h"
+#include "../../LIB/STD_TYPES.h"
+#include "../../LIB/BIT_MATH.h"
 
-#include "DIO_Register.h"
-#include "DIO_Interface.h"
+#include "../DIO/DIO_Register.h"
+#include "../DIO/DIO_Interface.h"
 
 
 #include <util/delay.h>

@@ -7,12 +7,12 @@
 #define AVCC 		1		//AVCC with external capacitor at AREF pin	REFS1 REFS0 01
 #define Reserved 	2		//Reserved	REFS1 REFS0 10
 #define Internal 	3		//Internal 2.56V Voltage Reference with external capacitor at AREF pin		REFS1 REFS0 11
-#define Voltage_Reference_Selection 	Internal
+#define Voltage_Reference_Selection 	AVCC
 //-------------------------------------------------
 // The ADC Data Register – ADCL and ADCH
 #define ADC_10Bits				0									//ADLAR = 0 	for Right Adjust
 #define ADC_8Bits				1									//ADLAR = 1		for Left Adjust
-#define ADC_Data_Register_width		ADC_8Bits	 	// ADC_10Bits // ADC_8Bit //
+#define ADC_Data_Register_width		ADC_10Bits	 	// ADC_10Bits // ADC_8Bit //
 //-------------------------------------------------
 //ADC Prescaler Select Bits
 //Bits 2:0 – ADPS2:0: ADC Prescaler Select Bits	0b000 -> Division Factor 2 ~ 0b111 -> Division Factor 128
@@ -25,7 +25,7 @@
 #define Division_Factor_32	4
 #define Division_Factor_64	5
 #define Division_Factor_128	6
-#define ADC_Division_Factor		Division_Factor_128
+#define ADC_Division_Factor		Division_Factor_64
 //-------------------------------------------------
 //ADC Enable Mode
 #define ADC_Enable_OD		0		//ADC Enable On demand , must be called each time >> Single conversion

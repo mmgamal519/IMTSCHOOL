@@ -1,10 +1,10 @@
 
-#include "STD_TYPES.h"
-#include "BIT_MATH.h"
-#include "DIO_Register.h"
-#include "DIO_Interface.h"
-#include "LCD_Register.h"
-#include "LCD_Interface.h"
+#include "../../LIB/STD_TYPES.h"
+#include "../../LIB/BIT_MATH.h"
+#include "../DIO/DIO_Register.h"
+#include "../DIO/DIO_Interface.h"
+#include "../../HAL/LCD16x2/LCD_Register.h"
+#include "../../HAL/LCD16x2/LCD_Interface.h"
 
 #include "ADC_Register.h"
 #include "ADC_Config.h"
