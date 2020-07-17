@@ -118,7 +118,7 @@ void LCD_VidWriteData(u8 LOC_u8Data)
 #error "Wrong LCD Initialization Mode"
 #endif 	//LCD Initialization Mode
 }
-void LCD_VidWriteString(s8* LOC_u8String)
+void LCD_VidWriteString(u8* LOC_u8String)
 {
 	//LCD Initialization Mode
 #if LCD_Intialization_Mode ==	LCD_8bits
