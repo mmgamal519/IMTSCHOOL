@@ -31,4 +31,6 @@ typedef f96 *pf96;
 
 //----------------
 #define NULL (void *)0
+typedef unsigned char  RtnErrorCode;
+typedef unsigned short int   Data_RtnErrorCode;
 //#define NULL_APF (void *[])0

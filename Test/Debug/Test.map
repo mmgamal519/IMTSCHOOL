@@ -1,11 +1,7 @@
 Archive member included because of file (symbol)
 
-c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
-                              ./main.o (__divmodhi4)
 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
                               c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o (exit)
-c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
-                              ./main.o (__do_copy_data)
 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
                               ./main.o (__fixunssfsi)
 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
@@ -22,12 +18,12 @@ c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/i
                               c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o) (__fixsfsi)
 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
                               c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o) (__thenan_sf)
-c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
-                              c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o) (__udivmodhi4)
 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
                               c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o) (__prologue_saves__)
 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
                               c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o) (__epilogue_restores__)
+c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                              c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o) (__do_copy_data)
 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
                               c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o) (__pack_f)
 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
@@ -49,6 +45,7 @@ signature        0x00840000         0x00000400         rw !x
 Linker script and memory map
 
 LOAD c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+LOAD ./DIO_Program.o
 LOAD ./main.o
 LOAD c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 LOAD c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
@@ -144,7 +141,7 @@ LOAD c:/users/mgismail/desktop/personal development/embbedded system/imt es dipl
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xf7c
+.text           0x00000000     0x14ce
  *(.vectors)
  .vectors       0x00000000       0x54 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -219,10 +216,9 @@ LOAD c:/users/mgismail/desktop/personal development/embbedded system/imt es dipl
                 0x0000007e                __vector_16
                 0x0000007e                __vector_18
                 0x0000007e                __vector_20
+ .text          0x00000082        0x0 ./DIO_Program.o
  .text          0x00000082        0x0 ./main.o
- .text          0x00000082        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
  .text          0x00000082        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text          0x00000082        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
  .text          0x00000082       0x58 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
                 0x00000082                __fixunssfsi
  .text          0x000000da      0x354 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
@@ -239,9 +235,9 @@ LOAD c:/users/mgismail/desktop/personal development/embbedded system/imt es dipl
  .text          0x00000742       0xa8 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
                 0x00000742                __fixsfsi
  .text          0x000007ea        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
- .text          0x000007ea        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
  .text          0x000007ea        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
  .text          0x000007ea        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+ .text          0x000007ea        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
  .text          0x000007ea      0x1aa c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
                 0x000007ea                __pack_f
  .text          0x00000994       0xf0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
@@ -250,27 +246,44 @@ LOAD c:/users/mgismail/desktop/personal development/embbedded system/imt es dipl
                 0x00000a84                __fpcmp_parts_f
                 0x00000b36                . = ALIGN (0x2)
  *(.text.*)
- .text.main     0x00000b36       0x20 ./main.o
-                0x00000b36                main
- .text.DIO_VidCountUp_7SegViaOnePort
-                0x00000b56      0x366 ./main.o
-                0x00000b56                DIO_VidCountUp_7SegViaOnePort
- .text.libgcc   0x00000ebc       0x26 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
-                0x00000ebc                __divmodhi4
-                0x00000ebc                _div
- .text.libgcc   0x00000ee2        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00000ee2        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00000ee2       0x28 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
-                0x00000ee2                __udivmodhi4
- .text.libgcc   0x00000f0a       0x38 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x00000f0a                __prologue_saves__
- .text.libgcc   0x00000f42       0x36 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x00000f42                __epilogue_restores__
-                0x00000f78                . = ALIGN (0x2)
+ .text.DIO_VidSetPinDirection
+                0x00000b36      0x200 ./DIO_Program.o
+                0x00000b36                DIO_VidSetPinDirection
+ .text.DIO_VidSetPinValue
+                0x00000d36      0x200 ./DIO_Program.o
+                0x00000d36                DIO_VidSetPinValue
+ .text.DIO_VidSetPortDirection
+                0x00000f36       0x82 ./DIO_Program.o
+                0x00000f36                DIO_VidSetPortDirection
+ .text.DIO_VidSetPortValue
+                0x00000fb8       0x82 ./DIO_Program.o
+                0x00000fb8                DIO_VidSetPortValue
+ .text.DIO_u8GetPinValue
+                0x0000103a       0xf2 ./DIO_Program.o
+                0x0000103a                DIO_u8GetPinValue
+ .text.DIO_u8GetPortValue
+                0x0000112c       0x82 ./DIO_Program.o
+                0x0000112c                DIO_u8GetPortValue
+ .text.DIO_u8ReadPortValue
+                0x000011ae       0x82 ./DIO_Program.o
+                0x000011ae                DIO_u8ReadPortValue
+ .text.main     0x00001230      0x1fa ./main.o
+                0x00001230                main
+ .text.WDT_ON   0x0000142a       0x16 ./main.o
+                0x0000142a                WDT_ON
+ .text.WDT_OFF  0x00001440       0x1c ./main.o
+                0x00001440                WDT_OFF
+ .text.libgcc   0x0000145c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x0000145c       0x38 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x0000145c                __prologue_saves__
+ .text.libgcc   0x00001494       0x36 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x00001494                __epilogue_restores__
+ .text.libgcc   0x000014ca        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x000014ca                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000f78        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00000f78                exit
-                0x00000f78                _exit
+ .fini9         0x000014ca        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x000014ca                exit
+                0x000014ca                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -289,18 +302,17 @@ LOAD c:/users/mgismail/desktop/personal development/embbedded system/imt es dipl
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000f78        0x4 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x000014ca        0x4 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000f7c                _etext = .
+                0x000014ce                _etext = .
 
-.data           0x00800060       0x2c load address 0x00000f7c
+.data           0x00800060        0x8 load address 0x000014ce
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .data          0x00800060        0x0 ./DIO_Program.o
  .data          0x00800060        0x0 ./main.o
- .data          0x00800060        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
  .data          0x00800060        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .data          0x00800060        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
  .data          0x00800060        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
  .data          0x00800060        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
  .data          0x00800060        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
@@ -310,63 +322,53 @@ LOAD c:/users/mgismail/desktop/personal development/embbedded system/imt es dipl
  .data          0x00800060        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
  .data          0x00800060        0x8 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
                 0x00800060                __thenan_sf
- .data          0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
  .data          0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
  .data          0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+ .data          0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
  .data          0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
  .data          0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
  .data          0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
  *(.data*)
- .data._7Seg_array
-                0x00800068       0x14 ./main.o
-                0x00800068                _7Seg_array
- .data._7Seg_loading_array_Right
-                0x0080007c        0x8 ./main.o
-                0x0080007c                _7Seg_loading_array_Right
- .data._7Seg_loading_array_Left
-                0x00800084        0x8 ./main.o
-                0x00800084                _7Seg_loading_array_Left
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.d*)
-                0x0080008c                . = ALIGN (0x2)
-                0x0080008c                _edata = .
-                0x0080008c                PROVIDE (__data_end, .)
+                0x00800068                . = ALIGN (0x2)
+                0x00800068                _edata = .
+                0x00800068                PROVIDE (__data_end, .)
 
-.bss            0x0080008c        0x0
-                0x0080008c                PROVIDE (__bss_start, .)
+.bss            0x00800068        0x0
+                0x00800068                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
- .bss           0x0080008c        0x0 ./main.o
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
- .bss           0x0080008c        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .bss           0x00800068        0x0 ./DIO_Program.o
+ .bss           0x00800068        0x0 ./main.o
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
+ .bss           0x00800068        0x0 c:/users/mgismail/desktop/personal development/embbedded system/imt es diploma/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
  *(.bss*)
  *(COMMON)
-                0x0080008c                PROVIDE (__bss_end, .)
-                0x00000f7c                __data_load_start = LOADADDR (.data)
-                0x00000fa8                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800068                PROVIDE (__bss_end, .)
+                0x000014ce                __data_load_start = LOADADDR (.data)
+                0x000014d6                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080008c        0x0
-                0x0080008c                PROVIDE (__noinit_start, .)
+.noinit         0x00800068        0x0
+                0x00800068                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x0080008c                PROVIDE (__noinit_end, .)
-                0x0080008c                _end = .
-                0x0080008c                PROVIDE (__heap_start, .)
+                0x00800068                PROVIDE (__noinit_end, .)
+                0x00800068                _end = .
+                0x00800068                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -384,13 +386,15 @@ LOAD c:/users/mgismail/desktop/personal development/embbedded system/imt es dipl
 .signature
  *(.signature*)
 
-.stab           0x00000000      0x7bc
+.stab           0x00000000      0xb94
  *(.stab)
- .stab          0x00000000      0x7bc ./main.o
+ .stab          0x00000000      0x870 ./DIO_Program.o
+ .stab          0x00000870      0x324 ./main.o
+                                0x60c (size before relaxing)
 
-.stabstr        0x00000000      0xce7
+.stabstr        0x00000000      0xaf0
  *(.stabstr)
- .stabstr       0x00000000      0xce7 ./main.o
+ .stabstr       0x00000000      0xaf0 ./DIO_Program.o
 
 .stab.excl
  *(.stab.excl)

@@ -23,7 +23,7 @@ void SPI_Init(void)
 	//SET_BIT(SPCR, SPCR_CPHA); //Clock Phase
 	//SPI Clock Rate Select 1 and 0 //fclk/64
 	//CLR_BIT(SPSR, SPSR_SPI2X);
-//	SET_BIT(SPCR, SPCR_SPR1);
+	//	SET_BIT(SPCR, SPCR_SPR1);
 	//SET_BIT(SPCR, SPCR_SPR0);
 	SPCR = (1<<SPCR_SPE)|(1<<SPCR_MSTR)|(1<<SPCR_SPR0);
 

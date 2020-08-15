@@ -64,7 +64,7 @@ void  ADC_main (void)
 /*
 void  main (void)
 {
-	/*LCD_VidInit();
+	LCD_VidInit();
 	ADC_VidInit();
 	GLOBALINT_VidEnable();
 	Smart_Home_Main ();
@@ -88,8 +88,8 @@ void  main (void)
 
 	}
 }
- */
-/*{
+
+{
 	_delay_ms(100);
 	//ADC_SetCallBack(ADC_Function);
 	TIMER_SetCallBack(TIMER0_Function);
